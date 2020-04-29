@@ -5,10 +5,12 @@ from random_walk import RandomWalk
 #Keep making new walks, as long the program is active.
 while True:
     #Make random walk, and plot the points.
-    rw = RandomWalk()
+    rw = RandomWalk(700000)
     rw.fill_walk()
+
+    #Plot the points, and show the plot
     point_numbers = list(range(rw.num_points))
-    plt.scatter(rw.x_values, rw.y_values, c=point_numbers, cmap=plt.cm.Blues, edgecolor='none', s=15)
+    plt.scatter(rw.x_values, rw.y_values, c=point_numbers, cmap=plt.cm.Blues, edgecolor='none', s=1)
 
     #Emphasize the first and last points
     plt.scatter(0, 0, c='green', edgecolor='none', s=100)
